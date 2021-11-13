@@ -1,0 +1,19 @@
+
+.deshboard{
+       text-align: left;
+}
+.link{
+    display: block;
+    text-decoration: none;
+ 
+    font-size: 18px;
+    padding-left: 70px;
+       line-height: 40px;
+}
+.link:hover{
+    color: red;
+ 
+}
+.routes{
+    text-align: left;
+}
