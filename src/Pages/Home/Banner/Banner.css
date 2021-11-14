@@ -1,17 +1,17 @@
 .banner{
-    background:linear-gradient(#e0dfdf, #dfdfe0) ,url('https://whitecompany.scene7.com/is/image/whitecompany/Jute-Woven-Placemat/KAHJP_24_MAIN?$D_PDP_824x824$');
+    background:linear-gradient(#e0dfdf, #dfdfe0) ,url('https://secure.img1-fg.wfcdn.com/im/73889326/resize-h800-w800%5Ecompr-r85/4469/44691032/Reinheimer+Handwoven+Flatweave+Jute%2FSisal+Blue%2FNatural+Area+Rug.jpg');
     background-size: cover;
     background-blend-mode: darken;
-    height: 500px;
+    height: 100vh;
     padding-top: 200px;
-   
-   padding-left: 250px;
-    color: rgb(255, 249, 249);
+   width: 100%;
+   /* padding-left: 250px; */
+    color: rgb(158, 7, 7);
 }
 .banner h1{
     font-size: 60px;
 }
 .banner p{
     font-size: 20px;
-color: rgb(184, 90, 28);
+color: rgb(143, 53, 8);
 }

@@ -50,9 +50,9 @@ const DrawerElement = () => {
                         </ListItemText>
                     </ListItem>
                     <ListItem onClick={() => setOpenDrawer(false)}>
-                        <ListItemText>
+                        {user.email ? <ListItemText>
                             <Link to="/dashboard" className={classes.link}>DashBoard</Link>
-                        </ListItemText>
+                        </ListItemText> : ''}
                     </ListItem>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>

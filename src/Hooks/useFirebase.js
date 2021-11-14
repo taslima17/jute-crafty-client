@@ -116,15 +116,15 @@ const useFirebase = () => {
         return unsubscribed;
     }, [])
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${user.email}`).then(res => res.json()).then(data => {
-            setAdmin(data.admin);
+        fetch(`https://rocky-dawn-44434.herokuapp.com/user/${user.email}`).then(res => res.json()).then(data => {
+            setAdmin(data?.admin);
             console.log(data)
         })
     }, [user.email])
     const savedUser = (displayName, email, method) => {
         const userInfo = { email, displayName };
         console.log(userInfo)
-        fetch('http://localhost:5000/user', {
+        fetch('https://rocky-dawn-44434.herokuapp.com/user', {
             method: method, headers: {
                 'content-type': 'application/json'
             }, body: JSON.stringify(userInfo)

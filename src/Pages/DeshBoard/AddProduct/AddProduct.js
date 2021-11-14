@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/product', {
+        fetch('https://rocky-dawn-44434.herokuapp.com/product', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
@@ -19,6 +19,7 @@ const AddProduct = () => {
     }
     return (
         <div>
+            <h1>Add Products</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
 
 
@@ -31,7 +32,7 @@ const AddProduct = () => {
 
 
 
-                <input type="submit" />
+                <input type="submit" value="Add Product" style={{ background: "rosybrown" }} />
             </form>
         </div>
     );

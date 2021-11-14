@@ -19,10 +19,10 @@ const Footer = () => {
                         <p>Terms and condition</p>
                         <p>Status</p>
                         <div className="icons" >
-                            <i style={{ background: "black", color: "white", padding: "10px 15px", borderRadius: "50%" }} class="fab fa-facebook-f"></i>
-                            <i style={{ background: "black", color: "white", padding: "10px ", borderRadius: "50%" }} class="fab fa-twitter"></i>
-                            <i style={{ background: "black", color: "white", padding: "10px ", borderRadius: "50%" }} class="fab fa-linkedin-in"></i>
-                            <i style={{ background: "black", color: "white", padding: "10px ", borderRadius: "50%" }} class="fab fa-instagram"></i>
+                            <i style={{ background: "black", color: "white", padding: "10px 15px", borderRadius: "50%" }} className="fab fa-facebook-f"></i>
+                            <i style={{ background: "black", color: "white", padding: "10px ", borderRadius: "50%" }} className="fab fa-twitter"></i>
+                            <i style={{ background: "black", color: "white", padding: "10px ", borderRadius: "50%" }} className="fab fa-linkedin-in"></i>
+                            <i style={{ background: "black", color: "white", padding: "10px ", borderRadius: "50%" }} className="fab fa-instagram"></i>
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} >

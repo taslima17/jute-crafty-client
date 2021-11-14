@@ -8,7 +8,7 @@ const OurProducts = () => {
     const [products, setProducts] = useState([]);
     const history = useHistory();
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://rocky-dawn-44434.herokuapp.com/products')
             .then(res => res.json()).then(data => setProducts(data))
 
     }, [products]);
@@ -21,7 +21,7 @@ const OurProducts = () => {
     return (
         <div>
             <ProductsBanner></ProductsBanner>
-            <Grid container spacing={4} style={{ width: "80%", margin: "auto" }}>
+            <Grid container spacing={4} style={{ width: "80%", margin: "auto", marginTop: "100px", marginBottom: "50px" }}>
                 {products.map((p, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>
                         <Card sx={{ maxWidth: 345 }}>
@@ -36,10 +36,7 @@ const OurProducts = () => {
                                     <Typography gutterBottom variant="h5" component="div">
                                         {p.name}
                                     </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                                        species, ranging across all continents except Antarctica
-                                    </Typography>
+
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>

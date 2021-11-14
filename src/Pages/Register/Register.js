@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-
+import Alert from '@mui/material/Alert';
 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -16,7 +16,7 @@ import useAuth from '../../Hooks/useAuth';
 const theme = createTheme();
 
 const Register = () => {
-    const { register } = useAuth();
+    const { register, error } = useAuth();
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -27,7 +27,7 @@ const Register = () => {
         });
         register(data.get('name'), data.get('email'), data.get('password'));
 
-        fetch('http://localhost:5000/user', {
+        fetch('https://rocky-dawn-44434.herokuapp.com/user', {
             method: "POST", headers: {
                 'content-type': 'application/json'
             }, body: JSON.stringify({ name: data.get('name'), email: data.get('email'), password: data.get('password') })
@@ -50,13 +50,11 @@ const Register = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
+
                     <Typography component="h1" variant="h5">
-                        Sign up
+                        Please Sign up
                     </Typography>
-                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3, mb: 5 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <TextField
@@ -101,12 +99,14 @@ const Register = () => {
                         >
                             Sign Up
                         </Button>
+
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link to="/login" variant="body2">
+                                <Link to="/login" style={{ textDecoration: "none" }} variant="body2">
                                     Already have an account? Sign in
                                 </Link>
                             </Grid>
+                            {error.length ? <Alert severity="error">{error}</Alert> : ""}
                         </Grid>
                     </Box>
                 </Box>

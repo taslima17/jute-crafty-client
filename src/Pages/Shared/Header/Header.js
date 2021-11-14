@@ -50,13 +50,13 @@ const Header = () => {
 
     return (
         <div>
-            <Grid container spacing={2} >
+            <Grid container>
                 <Grid item xs={12} md={4}>
                     <div className="icons">
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-linkedin-in"></i>
-                        <i class="fab fa-instagram"></i>
+                        <i className="fab fa-facebook-f"></i>
+                        <i className="fab fa-twitter"></i>
+                        <i className="fab fa-linkedin-in"></i>
+                        <i className="fab fa-instagram"></i>
                     </div>
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -86,9 +86,9 @@ const Header = () => {
                             <Link to="/ourproducts" className={classes.link}>
                                 Our Products
                             </Link>
-                            <Link to="/dashboard" className={classes.link}>
+                            {user.email ? <Link to="/dashboard" className={classes.link}>
                                 Dashboard
-                            </Link>
+                            </Link> : ""}
 
                             {
                                 user.email ? <Link to="/" onClick={logOut} className={classes.link}>LogOut</Link> : <Link to='/login' className={classes.link}>Login</Link>

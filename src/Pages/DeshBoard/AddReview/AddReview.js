@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { useForm } from "react-hook-form";
+import './addReview.css'
 
 
 const AddReview = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/review', {
+        fetch('https://rocky-dawn-44434.herokuapp.com/review', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
@@ -20,6 +21,7 @@ const AddReview = () => {
     }
     return (
         <div>
+            <h1>Add Review</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
 
 
@@ -32,7 +34,7 @@ const AddReview = () => {
 
 
 
-                <input type="submit" />
+                <input type="submit" value="Add Review" />
             </form>
         </div>
     );

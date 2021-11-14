@@ -1,10 +1,11 @@
+import { Rating } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 
 const Review = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews').then(res => res.json()).then(data => setReviews(data))
+        fetch('https://rocky-dawn-44434.herokuapp.com/reviews').then(res => res.json()).then(data => setReviews(data))
     }, [reviews])
     const settings = {
         dots: true,
@@ -47,7 +48,9 @@ const Review = () => {
             <Slider style={{ width: "70%", margin: "auto" }} {...settings}>
                 {reviews.map(r => <div>
                     <img style={{ borderRadius: "50%", height: "150px", margin: "auto" }} src={r.img} alt="" />
+
                     <div style={{ padding: "30px", fontSize: "1.1rem" }}><h3>{r.name}</h3>
+                        <Rating name="read-only" value={r.rating} />
                         <p>{r.feedback}</p></div>
                 </div>)}
 

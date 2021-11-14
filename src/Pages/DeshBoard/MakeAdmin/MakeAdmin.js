@@ -12,24 +12,22 @@ const MakeAdmin = () => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-
-        e.target.reset()
         const user = { email }
+        console.log(user)
         fetch('http://localhost:5000/user/admin', {
             method: "PUT", headers: {
-
                 'content-type': 'application/json'
             }, body: JSON.stringify(user)
         }).then(res => res.json()).then(data => {
             console.log(data);
+
             if (data.modifiedCount > 0) {
                 setEmail('')
                 setSuccess(true)
-
+                alert('admin added successfully')
+                e.target.reset();
             }
-
         })
-
     }
     return (
         <div>
@@ -38,7 +36,7 @@ const MakeAdmin = () => {
                 <TextField
                     label="Email" type="email" onBlur={handleBlur} variant="standard"
                 /> <br /> <br />
-                <Button variant="contained" type="submit" onClick={handleSubmit}>Make Admin</Button>
+                <Button variant="contained" type="submit" sx={{ background: "black" }} onClick={handleSubmit}>Make Admin</Button>
             </form>
             {
                 success && <Alert severity="success">Made admin successfully</Alert>

@@ -11,6 +11,7 @@ import ProductsDetails from './Pages/Home/Products/ProductsDetails/ProductsDetai
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import OurProducts from './Pages/OurProducts/OurProducts';
 import DashBoard from './Pages/DeshBoard/DashBoard';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
             <PrivateRoute path="/dashboard">
               <DashBoard></DashBoard>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </BrowserRouter>
         <Footer></Footer>

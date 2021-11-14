@@ -12,12 +12,13 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link, useHistory, useLocation } from 'react-router-dom';
+import Alert from '@mui/material/Alert';
 import useAuth from '../../Hooks/useAuth';
 const theme = createTheme();
 
 const Login = () => {
 
-    const { logIn, googleSignIn } = useAuth();
+    const { logIn, googleSignIn, error } = useAuth();
     const history = useHistory();
     const location = useLocation();
     const handleSubmit = (event) => {
@@ -44,13 +45,11 @@ const Login = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
+
                     <Typography component="h1" variant="h5">
-                        Sign in
+                        Please Sign in
                     </Typography>
-                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, mb: 5 }}>
                         <TextField
                             margin="normal"
                             required
@@ -71,10 +70,7 @@ const Login = () => {
                             id="password"
                             autoComplete="current-password"
                         />
-                        <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
-                            label="Remember me"
-                        />
+
                         <Button
                             type="submit"
                             fullWidth
@@ -86,12 +82,13 @@ const Login = () => {
                         <Grid container>
 
                             <Grid item>
-                                <Link to="/register" variant="body2">
+                                <Link to="/register" variant="body2" style={{ textDecoration: "none" }}>
                                     {"Don't have an account? Sign Up"}
                                 </Link>
                             </Grid>
                         </Grid>
-                        <Button onClick={() => googleSignIn(history, location)}>Google Sign in</Button>
+                        {error.length ? <Alert severity="error">{error}</Alert> : ""}
+                        <Button style={{ background: "brown", color: "white", padding: "10px 50px", margin: "20px" }} onClick={() => googleSignIn(history, location)}>Google Sign in</Button>
                     </Box>
                 </Box>
 
