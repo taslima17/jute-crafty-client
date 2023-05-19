@@ -1,0 +1,32 @@
+
+.deshboard{
+       text-align: left;
+       margin: 50px;
+       
+}
+.link{
+    display: block;
+    text-decoration: none;
+ color: white;
+    font-size: 18px;
+      border-bottom: 3px solid white;
+       line-height: 60px;
+}
+.link:hover{
+    color: rgb(221, 223, 199);
+
+ 
+}
+.routes{
+    text-align: center;
+    padding-top: 50px;
+}
+.links{
+    background: rgb(99, 85, 85);
+    height: 100vh;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+  position: sticky;
+   
+}

@@ -1,0 +1,13 @@
+.icons i{
+    font-size: 25px;
+    margin: 20px;
+}
+.icons i:hover{
+    transform: scale(1.2);
+    color: silver;
+}
+.contract p{
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+}
